@@ -1,0 +1,102 @@
+[
+  {
+    "fecha": "2025-09-20 13:46:58",
+    "texto": "Hola",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 13:47:07",
+    "texto": "como estas tu??",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 13:47:09",
+    "texto": "si",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 13:47:26",
+    "texto": "oye me siento triste",
+    "emocion": "negative"
+  },
+  {
+    "fecha": "2025-09-20 13:47:46",
+    "texto": "es que ultimamnete no se que me pasa",
+    "emocion": "negative"
+  },
+  {
+    "fecha": "2025-09-20 13:56:09",
+    "texto": "hola, como estas??",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 13:56:18",
+    "texto": "oye",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 14:06:32",
+    "texto": "Ando feliz hoyyy",
+    "emocion": "positive"
+  },
+  {
+    "fecha": "2025-09-20 14:06:42",
+    "texto": "yo me siento bien ehh",
+    "emocion": "positive"
+  },
+  {
+    "fecha": "2025-09-20 14:06:47",
+    "texto": "gracias",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 14:07:05",
+    "texto": "oye solo queria contarte que estoy feliz, ya me voy eh",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 14:07:10",
+    "texto": "va gracias",
+    "emocion": "positive"
+  },
+  {
+    "fecha": "2025-09-20 15:17:14",
+    "texto": "Oye",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 15:19:26",
+    "texto": "Me siento mal",
+    "emocion": "negative"
+  },
+  {
+    "fecha": "2025-09-20 15:19:35",
+    "texto": "Pero estoy triste",
+    "emocion": "negative"
+  },
+  {
+    "fecha": "2025-09-20 15:19:41",
+    "texto": "ayuda",
+    "emocion": "neutral"
+  },
+  {
+    "fecha": "2025-09-20 15:20:06",
+    "texto": "muchas gracias pero quiero seguir contandote",
+    "emocion": "positive"
+  },
+  {
+    "fecha": "2025-10-29 20:40:55",
+    "texto": "Hoy me siento triste, he pensado en cosas malas",
+    "emocion": "negative"
+  },
+  {
+    "fecha": "2025-10-29 20:41:13",
+    "texto": "a veces creo que el suicidio seria la mejor opcion",
+    "emocion": "crisis"
+  },
+  {
+    "fecha": "2025-10-29 20:41:25",
+    "texto": "si",
+    "emocion": "neutral"
+  }
+]

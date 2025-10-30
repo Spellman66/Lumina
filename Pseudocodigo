@@ -1,0 +1,90 @@
+PSEUDOCÓDIGO — LUMINA: Asistente emocional
+
+1. INICIO DEL PROGRAMA
+   - Importar librerías necesarias:
+     - os: para configuración del entorno.
+     - json: para leer y escribir archivos de memoria emocional y frases.
+     - random: para seleccionar respuestas aleatorias.
+     - tkinter: para construir la interfaz gráfica.
+     - datetime: para registrar fecha y hora de cada entrada.
+     - transformers.pipeline: para cargar el modelo de análisis emocional.
+     - customtkinter: (aunque no se usa en la interfaz actual, está importado).
+
+2. CONFIGURACIÓN DEL ENTORNO
+   - Activar compatibilidad con PyTorch en sistemas Apple (MPS fallback).
+
+3. CARGA DEL MODELO DE ANÁLISIS EMOCIONAL
+   - Usar `pipeline()` de Hugging Face para cargar el modelo "UMUTeam/roberta-spanish-sentiment-analysis".
+   - El modelo se ejecuta en CPU (`device=-1`).
+   - Este modelo clasifica texto en emociones: `positive`, `negative`, `neutral`.
+
+4. DEFINICIÓN DE RESPUESTAS EMPÁTICAS
+   - Crear un diccionario llamado `respuestas` con frases asociadas a cada emoción.
+   - Incluir categoría especial `crisis` para respuestas de contención emocional.
+
+5. FUNCIÓN: guardar_memoria(texto, emocion)
+   - Crear un diccionario con:
+     - Fecha y hora actual.
+     - Texto ingresado por el usuario.
+     - Emoción detectada.
+   - Intentar abrir el archivo `memoria_emocional.json`:
+     - Si existe, cargar el historial.
+     - Si no existe, crear una lista vacía.
+   - Agregar la nueva entrada al historial.
+   - Guardar el historial actualizado en el archivo JSON.
+
+6. FUNCIÓN: mostrar_frase_anclaje()
+   - Intentar abrir el archivo `frases_anclaje.json`.
+   - Si hay frases guardadas, devolver una aleatoria entre comillas.
+   - Si el archivo no existe o está vacío, devolver mensaje de aviso.
+
+7. FUNCIÓN: mostrar_recursos()
+   - Intentar abrir el archivo `recursos_ayuda.json`.
+   - Si hay recursos, formatear cada uno con nombre, contacto y tipo.
+   - Devolver la lista como texto.
+   - Si el archivo no existe o está vacío, devolver mensaje de aviso.
+
+8. FUNCIÓN: generar_respuesta(texto)
+   - Analizar el texto con el modelo de emociones.
+   - Si el texto contiene palabras clave de crisis (como "suicidio", "me quiero morir", etc.), forzar emoción = "crisis".
+   - Llamar a `guardar_memoria()` para registrar la entrada.
+   - Seleccionar una respuesta aleatoria del diccionario según la emoción detectada.
+   - Si no se encuentra la emoción, devolver una respuesta genérica.
+
+9. FUNCIÓN: enviar()
+   - Obtener el texto escrito por el usuario en el campo de entrada.
+   - Si el texto está vacío, no hacer nada.
+   - Mostrar el texto del usuario en el área de chat con estilo "usuario".
+   - Limpiar el campo de entrada.
+   - Convertir el texto a minúsculas para facilitar la detección.
+
+   - Verificar el tipo de mensaje:
+     a) Si es una despedida ("salir", "adiós", "me voy"):
+        - Mostrar una frase de anclaje.
+        - Mostrar una frase de cierre emocional.
+     b) Si es un saludo ("hola", "buenas", etc.):
+        - Mostrar una frase de bienvenida cálida.
+     c) Si es una solicitud directa de ayuda ("estoy en crisis", "ayuda urgente"):
+        - Mostrar los recursos de ayuda disponibles.
+     d) Si el texto comienza con "guardar frase:":
+        - Extraer la frase.
+        - Guardarla en el archivo `frases_anclaje.json`.
+        - Confirmar que fue guardada.
+     e) Si no coincide con ningún caso anterior:
+        - Llamar a `generar_respuesta()` para obtener una respuesta emocional.
+        - Mostrar la respuesta en el área de chat con estilo "lumina".
+
+10. CONSTRUCCIÓN DE LA INTERFAZ GRÁFICA
+    - Crear ventana principal con título y fondo cálido.
+    - Agregar encabezado emocional con tipografía grande.
+    - Crear un `Frame` para contener el área de chat.
+    - Crear un `ScrolledText` para mostrar la conversación:
+      - Configurar fuente, colores y estilo visual.
+    - Definir estilos de burbuja para usuario y LUMINA:
+      - Justificación, color de fondo, márgenes y espaciado.
+    - Crear campo de entrada para que el usuario escriba.
+    - Crear botón "Enviar" que llama a la función `enviar()`.
+    - Mostrar mensaje de bienvenida al iniciar la app.
+    - Ejecutar el bucle principal de la ventana (`mainloop()`).
+
+11. FIN DEL PROGRAMA

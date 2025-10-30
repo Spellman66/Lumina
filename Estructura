@@ -1,0 +1,9 @@
+LUMINA/
+├── lumina.py
+├── memoria_emocional.json
+├── frases_anclaje.json
+├── recursos_ayuda.json
+├── assets/
+│   └── logo.png (opcional)
+├── docs/
+│   └── README.md

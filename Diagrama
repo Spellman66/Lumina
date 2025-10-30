@@ -1,0 +1,56 @@
+DIAGRAMA DE FLUJO — LUMINA: Asistente emocional
+
+[INICIO]
+   ↓
+[Importar librerías necesarias]
+   ↓
+[Configurar entorno PyTorch]
+   ↓
+[Cargar modelo de análisis emocional]
+   ↓
+[Definir respuestas empáticas por emoción]
+   ↓
+[Crear ventana e interfaz gráfica]
+   ↓
+[Esperar entrada del usuario]
+   ↓
+┌────────────────────────────────────────────────────────────┐
+│ FUNCIÓN enviar():                                          │
+│   ↓                                                        │
+│ [Obtener texto del campo de entrada]                       │
+│   ↓                                                        │
+│ [Mostrar mensaje del usuario en el área de chat]           │
+│   ↓                                                        │
+│ [Limpiar campo de entrada]                                 │
+│   ↓                                                        │
+│ [Convertir texto a minúsculas]                             │
+│   ↓                                                        │
+│ ┌────────────────────────────────────────────────────────┐ │
+│ │ ¿Es una despedida? ("salir", "adiós", "me voy")        │ │
+│ └────────────────────────────────────────────────────────┘ │
+│        ↓ Sí                         ↓ No                   │
+│ [Mostrar frase de anclaje]     ┌────────────────────────┐ │
+│ [Mostrar frase de cierre]      │ ¿Es un saludo?         │ │
+│        ↓                       │ ("hola", "buenas",...) │ │
+│     [FIN]                      └────────────────────────┘ │
+│                                     ↓ Sí       ↓ No       │
+│                             [Mostrar saludo]   ┌─────────┐│
+│                                                │ ¿Es     ││
+│                                                │ crisis? ││
+│                                                └─────────┘│
+│                                                ↓ Sí       ↓ No
+│                                        [Mostrar recursos] ┌────────────┐
+│                                                           │ ¿Inicia    │
+│                                                           │ con "guardar frase:"?
+│                                                           └────────────┘
+│                                                           ↓ Sí       ↓ No
+│                                                [Guardar frase en JSON] │
+│                                                           ↓           │
+│                                                [Confirmar guardado]   │
+│                                                           ↓           │
+│                                                    [Generar respuesta emocional]
+│                                                    [Guardar en memoria emocional]
+│                                                    [Mostrar respuesta de LUMINA]
+│                                                           ↓
+│                                                        [FIN]
+└────────────────────────────────────────────────────────────┘
